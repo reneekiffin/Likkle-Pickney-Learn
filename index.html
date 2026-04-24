@@ -673,6 +673,7 @@ touch-action: pan-y;
 width: 100%;
 height: 100%;
 min-height: 500px;
+position: relative;
 }
 .fullscreen-overlay .swipe-card {
 position: absolute;
@@ -685,7 +686,15 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+/* RESTORE the card feel — border, rounded corners, shadow */
+background: white;
+border: 3px solid var(–gold);
+border-radius: 28px;
+box-shadow: 0 10px 40px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.08);
 }
+/* Keep the special per-deck border colors in fullscreen too */
+.fullscreen-overlay .swipe-card.hero-card { border-color: var(–coral); }
+.fullscreen-overlay .swipe-card.animal-card { border-color: var(–teal); }
 /* BIGGER images for young eyes */
 .fullscreen-overlay .swipe-card .swipe-image {
 width: 85%;
@@ -1374,7 +1383,7 @@ outline-offset: 2px;
   <div class="progress-bar"><div class="progress-fill" id="heroes-progress" style="width: 0%"></div></div>
   <div class="swipe-deck" id="heroes-deck"></div>
   <div class="swipe-progress" id="heroes-counter"></div>
-  <div class="swipe-hint">👈 Swipe or tap the buttons 👉</div>
+  <div class="swipe-hint">👈 Swipe left for next, right for previous</div>
   <div class="swipe-buttons">
     <button class="swipe-btn" id="hero-prev-btn" aria-label="Previous">⬅️</button>
     <button class="swipe-btn next" id="hero-next-btn" aria-label="Next">➡️</button>
@@ -1405,7 +1414,7 @@ outline-offset: 2px;
       <div class="progress-bar"><div class="progress-fill" id="symbols-progress" style="width: 0%"></div></div>
       <div class="swipe-deck" id="symbols-deck"></div>
       <div class="swipe-progress" id="symbols-counter"></div>
-      <div class="swipe-hint">👈 Swipe or tap the buttons 👉</div>
+      <div class="swipe-hint">👈 Swipe left for next, right for previous</div>
       <div class="swipe-buttons">
         <button class="swipe-btn" id="sym-prev-btn" aria-label="Previous">⬅️</button>
         <button class="swipe-btn next" id="sym-next-btn" aria-label="Next">➡️</button>
@@ -1433,7 +1442,7 @@ outline-offset: 2px;
   <div class="progress-bar"><div class="progress-fill" id="animals-progress" style="width: 0%"></div></div>
   <div class="swipe-deck" id="animals-deck"></div>
   <div class="swipe-progress" id="animals-counter"></div>
-  <div class="swipe-hint">👈 Swipe or tap the buttons 👉</div>
+  <div class="swipe-hint">👈 Swipe left for next, right for previous</div>
   <div class="swipe-buttons">
     <button class="swipe-btn" id="animal-prev-btn" aria-label="Previous">⬅️</button>
     <button class="swipe-btn next" id="animal-next-btn" aria-label="Next" style="background:var(--teal);color:white">➡️</button>
@@ -1468,7 +1477,7 @@ outline-offset: 2px;
       <div class="progress-bar"><div class="progress-fill" id="alphabet-progress" style="width: 4%"></div></div>
       <div class="swipe-deck" id="swipe-deck"></div>
       <div class="swipe-progress" id="swipe-counter">Card 1 of 26</div>
-      <div class="swipe-hint">👈 Swipe or tap the buttons 👉</div>
+      <div class="swipe-hint">👈 Swipe left for next, right for previous</div>
       <div class="swipe-buttons">
         <button class="swipe-btn" id="prev-btn" aria-label="Previous">⬅️</button>
         <button class="swipe-btn next" id="next-btn" aria-label="Next">➡️</button>
@@ -2666,7 +2675,9 @@ function createSwipeDeck({ deckId, counterId, progressId, data, renderCardHTML, 
 
   function advance(direction) {
     const top = deck.querySelector('.swipe-card[style*="z-index: 10"]');
-    if (top) top.classList.add(direction === 'right' ? 'exit-right' : 'exit-left');
+    // 'right' direction = NEXT card. Since you swiped left to get here,
+    // the current card should fly off to the LEFT. And vice versa.
+    if (top) top.classList.add(direction === 'right' ? 'exit-left' : 'exit-right');
     setTimeout(() => {
       if (direction === 'right') state.idx = (state.idx + 1) % data.length;
       else state.idx = (state.idx - 1 + data.length) % data.length;
@@ -2708,8 +2719,10 @@ function attachSwipeHandlers(deck, advance) {
     dragging = false;
     top.classList.remove('dragging');
     cleanup();
-    if (currentX > 100) advance('right');
-    else if (currentX < -100) advance('left');
+    // Swipe LEFT (currentX negative) = go to NEXT card (like flipping pages forward)
+    // Swipe RIGHT (currentX positive) = go to PREVIOUS card (flip backward)
+    if (currentX < -100) advance('right');       // next
+    else if (currentX > 100) advance('left');    // previous
     else top.style.transform = '';
     currentX = 0;
   };
