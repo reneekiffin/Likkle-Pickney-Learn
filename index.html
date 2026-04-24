@@ -614,6 +614,131 @@ main {
   border-radius: 999px;
 }
 
+/* ===== FULLSCREEN MODE ===== */
+.fullscreen-btn {
+  position: absolute;
+  top: -8px;
+  right: 0;
+  background: white;
+  color: var(--text);
+  border: 2px solid var(--green);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 5;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+.fullscreen-btn:hover { background: var(--green); color: white; }
+.fullscreen-btn:active { transform: scale(0.95); }
+/* Position the button relative to its deck container */
+#heroes-swipe, #symbols-swipe-container, #animals-swipe, #alphabet-swipe-container {
+  position: relative;
+}
+
+/* Fullscreen overlay - takes over the whole screen */
+.fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, var(--cream) 0%, #fff3d6 100%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: env(safe-area-inset-top, 20px) 16px env(safe-area-inset-bottom, 20px);
+  animation: fsFadeIn 0.25s ease;
+}
+@keyframes fsFadeIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+
+.fullscreen-overlay .fs-card-wrap {
+  width: 100%;
+  max-width: 560px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+/* Scale the card to fill the available space */
+.fullscreen-overlay .swipe-card {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  max-height: 720px;
+  padding: 32px 24px;
+  font-size: 1.15em;
+}
+.fullscreen-overlay .swipe-card .hero-name,
+.fullscreen-overlay .swipe-card .letter {
+  font-size: 2.4em;
+}
+.fullscreen-overlay .swipe-card .swipe-image {
+  width: 60%;
+  max-width: 280px;
+  height: auto;
+  aspect-ratio: 1;
+}
+.fullscreen-overlay .swipe-card .fact {
+  font-size: 1.05em;
+  max-width: 90%;
+}
+
+/* Tap zones on the left and right edges for navigation (since buttons are hidden) */
+.fullscreen-overlay .fs-tap-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25%;
+  z-index: 10;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  color: var(--green);
+  font-weight: 800;
+  border: none;
+  font-family: inherit;
+}
+.fullscreen-overlay .fs-tap-zone:hover,
+.fullscreen-overlay .fs-tap-zone:active { opacity: 0.7; }
+.fullscreen-overlay .fs-tap-zone.left { left: 0; justify-content: flex-start; padding-left: 8px; }
+.fullscreen-overlay .fs-tap-zone.right { right: 0; justify-content: flex-end; padding-right: 8px; }
+
+/* Exit button — top-right */
+.fullscreen-overlay .fs-exit {
+  position: absolute;
+  top: calc(env(safe-area-inset-top, 16px) + 8px);
+  right: 16px;
+  background: white;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text);
+}
+.fullscreen-overlay .fs-exit:active { transform: scale(0.9); }
+
+/* When in fullscreen, disable scrolling on body */
+body.fullscreen-active {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 /* Grid view for alphabet */
 .alphabet-grid {
   display: grid;
@@ -1165,6 +1290,7 @@ button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .
     </div>
 
     <div id="heroes-swipe">
+      <button class="fullscreen-btn" data-deck="heroes" aria-label="Full-screen mode">⛶ Full Screen</button>
       <div class="progress-bar"><div class="progress-fill" id="heroes-progress" style="width: 0%"></div></div>
       <div class="swipe-deck" id="heroes-deck"></div>
       <div class="swipe-progress" id="heroes-counter"></div>
@@ -1192,6 +1318,7 @@ button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .
       </div>
     </div>
     <div id="symbols-swipe-container">
+      <button class="fullscreen-btn" data-deck="symbols" aria-label="Full-screen mode">⛶ Full Screen</button>
       <div class="progress-bar"><div class="progress-fill" id="symbols-progress" style="width: 0%"></div></div>
       <div class="swipe-deck" id="symbols-deck"></div>
       <div class="swipe-progress" id="symbols-counter"></div>
@@ -1217,6 +1344,7 @@ button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .
     </div>
 
     <div id="animals-swipe">
+      <button class="fullscreen-btn" data-deck="animals" aria-label="Full-screen mode">⛶ Full Screen</button>
       <div class="progress-bar"><div class="progress-fill" id="animals-progress" style="width: 0%"></div></div>
       <div class="swipe-deck" id="animals-deck"></div>
       <div class="swipe-progress" id="animals-counter"></div>
@@ -1248,6 +1376,7 @@ button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .
       </div>
     </div>
     <div id="alphabet-swipe-container">
+      <button class="fullscreen-btn" data-deck="alphabet" aria-label="Full-screen mode">⛶ Full Screen</button>
       <div class="progress-bar"><div class="progress-fill" id="alphabet-progress" style="width: 4%"></div></div>
       <div class="swipe-deck" id="swipe-deck"></div>
       <div class="swipe-progress" id="swipe-counter">Card 1 of 26</div>
@@ -2999,6 +3128,123 @@ function renderAll() {
   renderParishMap();
   renderAnthem();
 }
+
+/* =========================================================
+   FULLSCREEN MODE — big, distraction-free card view for kids
+   ========================================================= */
+const FS_DECK_CONFIG = {
+  heroes:   { deckId: 'heroes-deck',   getDeck: () => heroesDeck,    render: renderHeroes },
+  symbols:  { deckId: 'symbols-deck',  getDeck: () => symbolsDeck,   render: renderSymbolsSwipe },
+  animals:  { deckId: 'animals-deck',  getDeck: () => animalsDeck,   render: renderAnimalsSwipe },
+  alphabet: { deckId: 'swipe-deck',    getDeck: () => alphabetDeck,  render: renderAlphabetSwipe }
+};
+
+let fsActive = null;
+
+function enterFullscreen(deckKey) {
+  if (fsActive) return;
+  const cfg = FS_DECK_CONFIG[deckKey];
+  if (!cfg) return;
+  const deckEl = document.getElementById(cfg.deckId);
+  if (!deckEl) return;
+  const deckApi = cfg.getDeck();
+  if (!deckApi) return;
+
+  // Remember where the deck lives so we can put it back later
+  const parent = deckEl.parentElement;
+  const nextSibling = deckEl.nextSibling;
+  fsActive = { deckKey, deckEl, parent, nextSibling };
+
+  // Build the overlay
+  const overlay = document.createElement('div');
+  overlay.className = 'fullscreen-overlay';
+  overlay.id = 'fullscreen-overlay';
+  overlay.innerHTML = `
+    <button class="fs-exit" id="fs-exit-btn" aria-label="Exit full screen">✕</button>
+    <button class="fs-tap-zone left" id="fs-tap-left" aria-label="Previous card"></button>
+    <button class="fs-tap-zone right" id="fs-tap-right" aria-label="Next card"></button>
+    <div class="fs-card-wrap" id="fs-card-wrap"></div>
+  `;
+  document.body.appendChild(overlay);
+  document.body.classList.add('fullscreen-active');
+
+  // Move the deck element INTO the overlay
+  document.getElementById('fs-card-wrap').appendChild(deckEl);
+
+  // Wire up controls
+  document.getElementById('fs-exit-btn').addEventListener('click', exitFullscreen);
+  document.getElementById('fs-tap-left').addEventListener('click', () => deckApi.advance('left'));
+  document.getElementById('fs-tap-right').addEventListener('click', () => deckApi.advance('right'));
+
+  // ESC key exits
+  document.addEventListener('keydown', fsEscHandler);
+
+  // Try the real Fullscreen API where supported (Android Chrome, desktop)
+  if (overlay.requestFullscreen) {
+    overlay.requestFullscreen().catch(() => { /* iOS Safari: ignore, overlay CSS is enough */ });
+  }
+}
+
+function exitFullscreen() {
+  if (!fsActive) return;
+  const { deckEl, parent, nextSibling } = fsActive;
+
+  // Put the deck back where it came from
+  if (nextSibling && nextSibling.parentElement === parent) {
+    parent.insertBefore(deckEl, nextSibling);
+  } else {
+    parent.appendChild(deckEl);
+  }
+
+  // Remove overlay
+  const overlay = document.getElementById('fullscreen-overlay');
+  if (overlay) overlay.remove();
+  document.body.classList.remove('fullscreen-active');
+  document.removeEventListener('keydown', fsEscHandler);
+
+  // Exit browser fullscreen if active
+  if (document.fullscreenElement && document.exitFullscreen) {
+    document.exitFullscreen().catch(() => {});
+  }
+  fsActive = null;
+}
+
+function fsEscHandler(e) { if (e.key === 'Escape') exitFullscreen(); }
+
+// Wire up all ⛶ fullscreen buttons
+document.querySelectorAll('.fullscreen-btn').forEach(btn => {
+  btn.addEventListener('click', () => enterFullscreen(btn.dataset.deck));
+});
+
+// Auto-enable fullscreen for toddler/early age groups when a swipe tab is visible
+function maybeAutoFullscreen() {
+  const age = (typeof currentAge !== 'undefined') ? currentAge : null;
+  if (age !== 'toddler' && age !== 'early') return;
+  // Find which screen is active and whether it has a swipe deck
+  const activeScreen = document.querySelector('.screen.active');
+  if (!activeScreen) return;
+  const map = { 'screen-heroes': 'heroes', 'screen-symbols': 'symbols', 'screen-animals': 'animals', 'screen-alphabet': 'alphabet' };
+  const deckKey = map[activeScreen.id];
+  if (!deckKey) return;
+  // Make sure we're currently on the swipe tab of that screen
+  const swipeVisible = {
+    heroes:   () => document.getElementById('heroes-swipe')?.style.display !== 'none',
+    symbols:  () => document.getElementById('symbols-swipe-container')?.style.display !== 'none',
+    animals:  () => document.getElementById('animals-swipe')?.style.display !== 'none',
+    alphabet: () => document.getElementById('alphabet-swipe-container')?.style.display !== 'none'
+  };
+  if (!swipeVisible[deckKey]()) return;
+  // Small delay so the render finishes first
+  setTimeout(() => enterFullscreen(deckKey), 250);
+}
+
+// Hook into screen navigation — after any screen change, check if we should auto-fullscreen
+document.querySelectorAll('.section-card[data-screen]').forEach(card => {
+  card.addEventListener('click', () => {
+    // Wait for the screen transition to settle
+    setTimeout(maybeAutoFullscreen, 350);
+  });
+});
 
 filterHomeCards();
 renderAll();
