@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -18,43 +19,43 @@
    ========================================================= */
 
 :root {
-  --green: #009B3A;
-  --green-dark: #007a2d;
-  --gold: #FED100;
-  --gold-dark: #e6bd00;
-  --black: #1a1a1a;
-  --cream: #fff9e8;
-  --coral: #ff6b4a;
-  --sky: #4ec5e0;
-  --pink: #ff8fb8;
-  --purple: #9b6bd6;
-  --teal: #2aa8a0;
-  --text: #2b2b2b;
-  --muted: #666;
-  --shadow: 0 4px 0 rgba(0,0,0,0.12);
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
-  --radius: 20px;
-  --radius-lg: 28px;
-  /* County colors for the map */
-  --cornwall: #ff8fb8;
-  --middlesex: #ffd942;
-  --surrey: #6bb85f;
+–green: #009B3A;
+–green-dark: #007a2d;
+–gold: #FED100;
+–gold-dark: #e6bd00;
+–black: #1a1a1a;
+–cream: #fff9e8;
+–coral: #ff6b4a;
+–sky: #4ec5e0;
+–pink: #ff8fb8;
+–purple: #9b6bd6;
+–teal: #2aa8a0;
+–text: #2b2b2b;
+–muted: #666;
+–shadow: 0 4px 0 rgba(0,0,0,0.12);
+–shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+–radius: 20px;
+–radius-lg: 28px;
+/* County colors for the map */
+–cornwall: #ff8fb8;
+–middlesex: #ffd942;
+–surrey: #6bb85f;
 }
 
-* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-html {
+- { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html {
   scroll-behavior: smooth;
   /* Prevent the whole page from scaling on iOS when users double-tap or pinch */
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   touch-action: pan-x pan-y; /* allow scrolling, block pinch-zoom */
-}
-body {
+  }
+  body {
   margin: 0;
-  font-family: 'Fredoka', system-ui, sans-serif;
-  background: var(--cream);
-  color: var(--text);
+  font-family: ‘Fredoka’, system-ui, sans-serif;
+  background: var(–cream);
+  color: var(–text);
   min-height: 100vh;
   /* Account for the iOS home bar / address bar using svh (small viewport) */
   min-height: 100svh;
@@ -63,74 +64,74 @@ body {
   font-size: 17px;
   /* Prevent double-tap zoom on iOS */
   touch-action: pan-x pan-y;
-  /* Add padding so content isn't hidden behind iPhone notch or home indicator */
+  /* Add padding so content isn’t hidden behind iPhone notch or home indicator */
   padding-bottom: env(safe-area-inset-bottom, 0);
   padding-left: env(safe-area-inset-left, 0);
   padding-right: env(safe-area-inset-right, 0);
-}
-/* Images/buttons shouldn't be pinch-zoomable either */
-img, button, svg, .swipe-card, .item-card, .section-card {
+  }
+  /* Images/buttons shouldn’t be pinch-zoomable either */
+  img, button, svg, .swipe-card, .item-card, .section-card {
   touch-action: manipulation; /* disable double-tap zoom on these */
-}
-/* But scrollable content areas still need to scroll */
-.screen, main, body {
+  }
+  /* But scrollable content areas still need to scroll */
+  .screen, main, body {
   touch-action: pan-x pan-y;
-}
-h1, h2, h3, h4 { font-family: 'Baloo 2', sans-serif; margin: 0; line-height: 1.15; }
-button { font-family: inherit; cursor: pointer; border: none; background: none; }
+  }
+  h1, h2, h3, h4 { font-family: ‘Baloo 2’, sans-serif; margin: 0; line-height: 1.15; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
 /* ===== HEADER ===== */
 .app-header {
-  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
-  color: white;
-  padding: 18px 20px;
-  /* Respect the iPhone notch — add space above the header content on notched phones */
-  padding-top: calc(18px + env(safe-area-inset-top, 0));
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: var(--shadow);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+background: linear-gradient(135deg, var(–green) 0%, var(–green-dark) 100%);
+color: white;
+padding: 18px 20px;
+/* Respect the iPhone notch — add space above the header content on notched phones */
+padding-top: calc(18px + env(safe-area-inset-top, 0));
+position: sticky;
+top: 0;
+z-index: 100;
+box-shadow: var(–shadow);
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 12px;
 }
 .app-header .logo {
-  display: flex; align-items: center; gap: 10px;
-  font-family: 'Baloo 2', sans-serif;
-  font-weight: 800;
-  font-size: 20px;
+display: flex; align-items: center; gap: 10px;
+font-family: ‘Baloo 2’, sans-serif;
+font-weight: 800;
+font-size: 20px;
 }
 .app-header .logo-mark {
-  width: 38px; height: 38px;
-  background: var(--gold);
-  color: var(--black);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 22px;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+width: 38px; height: 38px;
+background: var(–gold);
+color: var(–black);
+border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-size: 22px;
+box-shadow: 0 2px 0 rgba(0,0,0,0.2);
 }
 .back-btn {
-  background: rgba(255,255,255,0.2);
-  color: white;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 15px;
-  font-weight: 600;
-  display: none;
-  align-items: center;
-  gap: 6px;
-  min-height: 40px;
+background: rgba(255,255,255,0.2);
+color: white;
+padding: 8px 14px;
+border-radius: 999px;
+font-size: 15px;
+font-weight: 600;
+display: none;
+align-items: center;
+gap: 6px;
+min-height: 40px;
 }
 .back-btn.show { display: inline-flex; }
 .back-btn:active { transform: scale(0.95); }
 
 main {
-  padding: 20px 16px 140px;
-  /* Extra bottom padding for iPhone home indicator / Safari address bar */
-  padding-bottom: calc(140px + env(safe-area-inset-bottom, 0));
-  max-width: 720px;
-  margin: 0 auto;
+padding: 20px 16px 140px;
+/* Extra bottom padding for iPhone home indicator / Safari address bar */
+padding-bottom: calc(140px + env(safe-area-inset-bottom, 0));
+max-width: 720px;
+margin: 0 auto;
 }
 .screen { display: none; animation: fadeIn 0.3s ease; }
 .screen.active { display: block; }
@@ -138,719 +139,791 @@ main {
 
 /* ===== HOME ===== */
 .hero {
-  background: linear-gradient(135deg, var(--gold) 0%, #ffd942 100%);
-  border-radius: var(--radius-lg);
-  padding: 24px 22px;
-  margin-bottom: 22px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow);
+background: linear-gradient(135deg, var(–gold) 0%, #ffd942 100%);
+border-radius: var(–radius-lg);
+padding: 24px 22px;
+margin-bottom: 22px;
+position: relative;
+overflow: hidden;
+box-shadow: var(–shadow);
 }
 .hero::before {
-  content: '';
-  position: absolute;
-  right: -30px; top: -30px;
-  width: 140px; height: 140px;
-  background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
-  border-radius: 50%;
+content: ‘’;
+position: absolute;
+right: -30px; top: -30px;
+width: 140px; height: 140px;
+background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
+border-radius: 50%;
 }
-.hero h1 { font-size: 28px; color: var(--black); margin-bottom: 6px; position: relative; }
-.hero p { margin: 0; color: var(--black); opacity: 0.8; font-size: 16px; position: relative; }
+.hero h1 { font-size: 28px; color: var(–black); margin-bottom: 6px; position: relative; }
+.hero p { margin: 0; color: var(–black); opacity: 0.8; font-size: 16px; position: relative; }
 .hero .flag-strip {
-  display: flex;
-  margin-top: 14px;
-  border-radius: 10px;
-  overflow: hidden;
-  height: 10px;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+display: flex;
+margin-top: 14px;
+border-radius: 10px;
+overflow: hidden;
+height: 10px;
+box-shadow: 0 2px 0 rgba(0,0,0,0.1);
 }
 .hero .flag-strip div { flex: 1; }
-.flag-strip .s1 { background: var(--black); }
-.flag-strip .s2 { background: var(--gold); }
-.flag-strip .s3 { background: var(--green); }
+.flag-strip .s1 { background: var(–black); }
+.flag-strip .s2 { background: var(–gold); }
+.flag-strip .s3 { background: var(–green); }
 
 .age-selector { margin-bottom: 24px; }
-.age-selector h2 { font-size: 18px; color: var(--text); margin-bottom: 10px; padding-left: 4px; }
+.age-selector h2 { font-size: 18px; color: var(–text); margin-bottom: 10px; padding-left: 4px; }
 .age-chips {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding: 4px 2px 8px;
-  scrollbar-width: none;
+display: flex;
+gap: 8px;
+overflow-x: auto;
+padding: 4px 2px 8px;
+scrollbar-width: none;
 }
 .age-chips::-webkit-scrollbar { display: none; }
 .age-chip {
-  flex-shrink: 0;
-  padding: 10px 16px;
-  background: white;
-  border: 2px solid #e5e5e5;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--muted);
-  transition: all 0.2s;
-  min-height: 44px;
+flex-shrink: 0;
+padding: 10px 16px;
+background: white;
+border: 2px solid #e5e5e5;
+border-radius: 999px;
+font-weight: 600;
+font-size: 14px;
+color: var(–muted);
+transition: all 0.2s;
+min-height: 44px;
 }
-.age-chip.active { background: var(--black); color: var(--gold); border-color: var(--black); }
+.age-chip.active { background: var(–black); color: var(–gold); border-color: var(–black); }
 .age-chip:active { transform: scale(0.95); }
 
 .section-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 .section-card {
-  background: white;
-  border-radius: var(--radius);
-  padding: 20px 16px;
-  text-align: left;
-  box-shadow: var(--shadow);
-  border: 3px solid transparent;
-  transition: all 0.2s;
-  min-height: 140px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
+background: white;
+border-radius: var(–radius);
+padding: 20px 16px;
+text-align: left;
+box-shadow: var(–shadow);
+border: 3px solid transparent;
+transition: all 0.2s;
+min-height: 140px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+position: relative;
+overflow: hidden;
 }
 .section-card:active { transform: scale(0.97); }
 .section-card .icon {
-  width: 52px; height: 52px;
-  border-radius: 16px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 28px;
-  margin-bottom: 10px;
+width: 52px; height: 52px;
+border-radius: 16px;
+display: flex; align-items: center; justify-content: center;
+font-size: 28px;
+margin-bottom: 10px;
 }
-.section-card h3 { font-size: 17px; color: var(--text); margin-bottom: 4px; }
-.section-card p { font-size: 13px; color: var(--muted); margin: 0; }
-.section-card.heroes { border-color: var(--coral); }
-.section-card.heroes .icon { background: #ffe3dc; color: var(--coral); }
-.section-card.symbols { border-color: var(--green); }
-.section-card.symbols .icon { background: #d4f0dd; color: var(--green); }
+.section-card h3 { font-size: 17px; color: var(–text); margin-bottom: 4px; }
+.section-card p { font-size: 13px; color: var(–muted); margin: 0; }
+.section-card.heroes { border-color: var(–coral); }
+.section-card.heroes .icon { background: #ffe3dc; color: var(–coral); }
+.section-card.symbols { border-color: var(–green); }
+.section-card.symbols .icon { background: #d4f0dd; color: var(–green); }
 .section-card.animals { border-color: #2aa8a0; }
 .section-card.animals .icon { background: #c8f0ec; color: #2aa8a0; }
-.section-card.alphabet { border-color: var(--gold-dark); }
+.section-card.alphabet { border-color: var(–gold-dark); }
 .section-card.alphabet .icon { background: #fff3b8; color: #a88400; }
-.section-card.sayings { border-color: var(--purple); }
-.section-card.sayings .icon { background: #ead6ff; color: var(--purple); }
-.section-card.dictionary { border-color: var(--sky); }
+.section-card.sayings { border-color: var(–purple); }
+.section-card.sayings .icon { background: #ead6ff; color: var(–purple); }
+.section-card.dictionary { border-color: var(–sky); }
 .section-card.dictionary .icon { background: #d1eff7; color: #1e8ba5; }
-.section-card.parishes { border-color: var(--pink); }
+.section-card.parishes { border-color: var(–pink); }
 .section-card.parishes .icon { background: #ffe0eb; color: #c7467f; }
-.section-card.anthem { border-color: var(--black); grid-column: span 2; min-height: auto; }
-.section-card.anthem .icon { background: var(--gold); color: var(--black); }
+.section-card.anthem { border-color: var(–black); grid-column: span 2; min-height: auto; }
+.section-card.anthem .icon { background: var(–gold); color: var(–black); }
 
 .section-header {
-  background: white;
-  border-radius: var(--radius);
-  padding: 20px;
-  margin-bottom: 18px;
-  box-shadow: var(--shadow);
-  border-left: 6px solid var(--green);
+background: white;
+border-radius: var(–radius);
+padding: 20px;
+margin-bottom: 18px;
+box-shadow: var(–shadow);
+border-left: 6px solid var(–green);
 }
 .section-header h2 { font-size: 24px; margin-bottom: 4px; }
-.section-header p { margin: 0; color: var(--muted); font-size: 14px; }
+.section-header p { margin: 0; color: var(–muted); font-size: 14px; }
 
 .card-list { display: flex; flex-direction: column; gap: 12px; }
 
 /* ===== ITEM CARDS WITH IMAGES ===== */
 .item-card {
-  background: white;
-  border-radius: var(--radius);
-  padding: 16px;
-  box-shadow: var(--shadow);
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  border: 2px solid transparent;
-  transition: all 0.2s;
+background: white;
+border-radius: var(–radius);
+padding: 16px;
+box-shadow: var(–shadow);
+display: flex;
+gap: 14px;
+align-items: flex-start;
+border: 2px solid transparent;
+transition: all 0.2s;
 }
 .item-card .visual {
-  width: 90px;
-  height: 90px;
-  border-radius: 14px;
-  flex-shrink: 0;
-  background: var(--cream);
-  overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-  position: relative;
+width: 90px;
+height: 90px;
+border-radius: 14px;
+flex-shrink: 0;
+background: var(–cream);
+overflow: hidden;
+display: flex; align-items: center; justify-content: center;
+position: relative;
 }
 .item-card .visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+width: 100%;
+height: 100%;
+object-fit: cover;
 }
 .item-card .visual .emoji-fallback {
-  font-size: 40px;
-  position: absolute;
-  inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--cream);
+font-size: 40px;
+position: absolute;
+inset: 0;
+display: flex; align-items: center; justify-content: center;
+background: var(–cream);
 }
 .item-card .content { flex: 1; min-width: 0; }
-.item-card h4 { font-size: 18px; margin-bottom: 4px; color: var(--text); }
+.item-card h4 { font-size: 18px; margin-bottom: 4px; color: var(–text); }
 .item-card .subtitle {
-  font-size: 12px;
-  color: var(--green);
-  font-weight: 600;
-  margin-bottom: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+font-size: 12px;
+color: var(–green);
+font-weight: 600;
+margin-bottom: 6px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
 }
-.item-card p { margin: 0; font-size: 14px; color: var(--text); line-height: 1.5; }
+.item-card p { margin: 0; font-size: 14px; color: var(–text); line-height: 1.5; }
 
 /* ===== SEARCH BAR ===== */
 .search-wrap {
-  position: relative;
-  margin-bottom: 16px;
+position: relative;
+margin-bottom: 16px;
 }
 .search-wrap input {
-  width: 100%;
-  padding: 14px 44px 14px 46px;
-  border-radius: 999px;
-  border: 2px solid #e5e5e5;
-  background: white;
-  font-family: inherit;
-  font-size: 16px;
-  color: var(--text);
-  box-shadow: var(--shadow);
-  outline: none;
-  min-height: 50px;
+width: 100%;
+padding: 14px 44px 14px 46px;
+border-radius: 999px;
+border: 2px solid #e5e5e5;
+background: white;
+font-family: inherit;
+font-size: 16px;
+color: var(–text);
+box-shadow: var(–shadow);
+outline: none;
+min-height: 50px;
 }
-.search-wrap input:focus { border-color: var(--sky); }
+.search-wrap input:focus { border-color: var(–sky); }
 .search-wrap .search-icon {
-  position: absolute;
-  left: 18px; top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  pointer-events: none;
+position: absolute;
+left: 18px; top: 50%;
+transform: translateY(-50%);
+font-size: 18px;
+pointer-events: none;
 }
 .search-wrap .clear-btn {
-  position: absolute;
-  right: 8px; top: 50%;
-  transform: translateY(-50%);
-  width: 34px; height: 34px;
-  border-radius: 50%;
-  background: #f0f0f0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  color: var(--muted);
+position: absolute;
+right: 8px; top: 50%;
+transform: translateY(-50%);
+width: 34px; height: 34px;
+border-radius: 50%;
+background: #f0f0f0;
+display: none;
+align-items: center;
+justify-content: center;
+font-size: 16px;
+color: var(–muted);
 }
 .search-wrap.has-text .clear-btn { display: flex; }
 .search-count {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 12px;
-  padding-left: 8px;
+font-size: 13px;
+color: var(–muted);
+margin-bottom: 12px;
+padding-left: 8px;
 }
 
 /* ===== ALPHABET — SWIPE DECK ===== */
 .alphabet-controls {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 14px;
-  flex-wrap: wrap;
+display: flex;
+justify-content: center;
+gap: 8px;
+margin-bottom: 14px;
+flex-wrap: wrap;
 }
 .view-toggle {
-  display: inline-flex;
-  background: white;
-  border-radius: 999px;
-  padding: 4px;
-  box-shadow: var(--shadow);
+display: inline-flex;
+background: white;
+border-radius: 999px;
+padding: 4px;
+box-shadow: var(–shadow);
 }
 .view-toggle button {
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--muted);
-  min-height: 38px;
+padding: 8px 16px;
+border-radius: 999px;
+font-size: 14px;
+font-weight: 600;
+color: var(–muted);
+min-height: 38px;
 }
-.view-toggle button.active { background: var(--gold); color: var(--black); }
+.view-toggle button.active { background: var(–gold); color: var(–black); }
 
 .swipe-deck {
-  position: relative;
-  width: 100%;
-  height: 460px;
-  margin: 20px 0;
-  perspective: 1200px;
+position: relative;
+width: 100%;
+height: 460px;
+margin: 20px 0;
+perspective: 1200px;
 }
 #heroes-deck { height: 540px; }
 @media (min-width: 600px) {
-  #heroes-deck { height: 600px; }
+#heroes-deck { height: 600px; }
 }
 .swipe-card {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, #fff 0%, #fffbe8 100%);
-  border-radius: 28px;
-  box-shadow: var(--shadow-lg);
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border: 4px solid var(--gold);
-  user-select: none;
-  cursor: grab;
-  touch-action: pan-y;
-  transition: transform 0.4s cubic-bezier(.2,.8,.2,1), opacity 0.4s;
-  will-change: transform;
+position: absolute;
+inset: 0;
+background: linear-gradient(160deg, #fff 0%, #fffbe8 100%);
+border-radius: 28px;
+box-shadow: var(–shadow-lg);
+padding: 22px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+border: 4px solid var(–gold);
+user-select: none;
+cursor: grab;
+touch-action: pan-y;
+transition: transform 0.4s cubic-bezier(.2,.8,.2,1), opacity 0.4s;
+will-change: transform;
 }
 .swipe-card.dragging { transition: none; cursor: grabbing; }
 .swipe-card.exit-left { transform: translateX(-150%) rotate(-25deg) !important; opacity: 0; }
 .swipe-card.exit-right { transform: translateX(150%) rotate(25deg) !important; opacity: 0; }
 .swipe-card .big-letter {
-  font-family: 'Baloo 2', sans-serif;
-  font-weight: 800;
-  font-size: 100px;
-  line-height: 0.9;
-  background: linear-gradient(135deg, var(--green), var(--gold-dark));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin-bottom: 8px;
+font-family: ‘Baloo 2’, sans-serif;
+font-weight: 800;
+font-size: 100px;
+line-height: 0.9;
+background: linear-gradient(135deg, var(–green), var(–gold-dark));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+margin-bottom: 8px;
 }
 .swipe-card .swipe-image {
-  width: 180px;
-  height: 180px;
-  border-radius: 22px;
-  overflow: hidden;
-  margin: 8px 0 16px;
-  background: var(--cream);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  position: relative;
+width: 180px;
+height: 180px;
+border-radius: 22px;
+overflow: hidden;
+margin: 8px 0 16px;
+background: var(–cream);
+box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+position: relative;
 }
 .swipe-card .swipe-image img {
-  width: 100%; height: 100%;
-  object-fit: cover;
+width: 100%; height: 100%;
+object-fit: cover;
 }
 .swipe-card .swipe-image .emoji-fallback {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 100px;
+position: absolute; inset: 0;
+display: flex; align-items: center; justify-content: center;
+font-size: 100px;
 }
 .swipe-card .word-display {
-  font-family: 'Baloo 2', sans-serif;
-  font-weight: 700;
-  font-size: 28px;
-  color: var(--black);
-  margin-bottom: 6px;
+font-family: ‘Baloo 2’, sans-serif;
+font-weight: 700;
+font-size: 28px;
+color: var(–black);
+margin-bottom: 6px;
 }
 .swipe-card.sym-card {
-  background: linear-gradient(160deg, #fff 0%, #eaf8ee 100%);
-  border-color: var(--green);
+background: linear-gradient(160deg, #fff 0%, #eaf8ee 100%);
+border-color: var(–green);
 }
 .swipe-card.hero-card {
-  background: linear-gradient(160deg, #fff 0%, #ffede5 100%);
-  border-color: var(--coral);
+background: linear-gradient(160deg, #fff 0%, #ffede5 100%);
+border-color: var(–coral);
 }
 .swipe-card.animal-card {
-  background: linear-gradient(160deg, #fff 0%, #e5f7f5 100%);
-  border-color: var(--teal);
+background: linear-gradient(160deg, #fff 0%, #e5f7f5 100%);
+border-color: var(–teal);
 }
 .swipe-card .animal-subtitle {
-  display: inline-block;
-  background: var(--teal);
-  color: white;
-  padding: 4px 14px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  margin-bottom: 10px;
+display: inline-block;
+background: var(–teal);
+color: white;
+padding: 4px 14px;
+border-radius: 999px;
+font-size: 11px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.8px;
+margin-bottom: 10px;
 }
 .swipe-card.animal-card .swipe-image {
-  width: 160px;
-  height: 160px;
-  margin: 4px 0 12px;
+width: 160px;
+height: 160px;
+margin: 4px 0 12px;
 }
 .animal-fun-fact {
-  background: #eefcfa;
-  border-left: 4px solid var(--teal);
-  padding: 12px 14px;
-  border-radius: 10px;
-  font-size: 13.5px;
-  color: var(--text);
-  text-align: left;
-  line-height: 1.5;
-  margin-top: 10px;
+background: #eefcfa;
+border-left: 4px solid var(–teal);
+padding: 12px 14px;
+border-radius: 10px;
+font-size: 13.5px;
+color: var(–text);
+text-align: left;
+line-height: 1.5;
+margin-top: 10px;
 }
 .animal-fun-fact strong {
-  color: #1c7d77;
-  display: block;
-  margin-bottom: 4px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+color: #1c7d77;
+display: block;
+margin-bottom: 4px;
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
 }
 .swipe-card .animal-fun-fact { max-width: 280px; margin-top: 14px; }
 .attribution-note {
-  font-size: 11px;
-  color: var(--muted);
-  text-align: center;
-  margin-top: 20px;
-  padding: 10px;
-  opacity: 0.7;
-  line-height: 1.5;
+font-size: 11px;
+color: var(–muted);
+text-align: center;
+margin-top: 20px;
+padding: 10px;
+opacity: 0.7;
+line-height: 1.5;
 }
-.attribution-note a { color: var(--teal); text-decoration: none; }
+.attribution-note a { color: var(–teal); text-decoration: none; }
 .swipe-card .hero-subtitle {
-  display: inline-block;
-  background: var(--coral);
-  color: white;
-  padding: 4px 14px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  margin-bottom: 10px;
+display: inline-block;
+background: var(–coral);
+color: white;
+padding: 4px 14px;
+border-radius: 999px;
+font-size: 11px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.8px;
+margin-bottom: 10px;
 }
 .swipe-card .hero-name {
-  font-family: 'Baloo 2', sans-serif;
-  font-weight: 700;
-  font-size: 22px;
-  color: var(--black);
-  margin-bottom: 6px;
-  text-align: center;
-  line-height: 1.2;
+font-family: ‘Baloo 2’, sans-serif;
+font-weight: 700;
+font-size: 22px;
+color: var(–black);
+margin-bottom: 6px;
+text-align: center;
+line-height: 1.2;
 }
 .swipe-card.hero-card .swipe-image {
-  width: 140px;
-  height: 140px;
-  margin: 4px 0 10px;
+width: 140px;
+height: 140px;
+margin: 4px 0 10px;
 }
 .swipe-card.hero-card .fact {
-  font-size: 13.5px;
-  margin-bottom: 2px;
+font-size: 13.5px;
+margin-bottom: 2px;
 }
 .hero-fun-fact {
-  background: #fff8f3;
-  border-left: 4px solid var(--coral);
-  padding: 12px 14px;
-  border-radius: 10px;
-  font-size: 13.5px;
-  color: var(--text);
-  text-align: left;
-  line-height: 1.5;
-  margin-top: 10px;
-  max-width: 100%;
+background: #fff8f3;
+border-left: 4px solid var(–coral);
+padding: 12px 14px;
+border-radius: 10px;
+font-size: 13.5px;
+color: var(–text);
+text-align: left;
+line-height: 1.5;
+margin-top: 10px;
+max-width: 100%;
 }
 .hero-fun-fact strong {
-  color: #c0392b;
-  display: block;
-  margin-bottom: 4px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+color: #c0392b;
+display: block;
+margin-bottom: 4px;
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
 }
 .swipe-card .hero-fun-fact {
-  max-width: 280px;
-  margin-top: 14px;
+max-width: 280px;
+margin-top: 14px;
 }
 .swipe-card .sym-subtitle {
-  display: inline-block;
-  background: var(--green);
-  color: white;
-  padding: 4px 14px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  margin-bottom: 10px;
+display: inline-block;
+background: var(–green);
+color: white;
+padding: 4px 14px;
+border-radius: 999px;
+font-size: 11px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.8px;
+margin-bottom: 10px;
 }
 .swipe-card .fact {
-  font-size: 14.5px;
-  color: var(--muted);
-  max-width: 280px;
-  line-height: 1.5;
+font-size: 14.5px;
+color: var(–muted);
+max-width: 280px;
+line-height: 1.5;
 }
 .swipe-hint {
-  text-align: center;
-  font-size: 13px;
-  color: var(--muted);
-  margin: -8px 0 12px;
+text-align: center;
+font-size: 13px;
+color: var(–muted);
+margin: -8px 0 12px;
 }
 .swipe-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 8px;
+display: flex;
+justify-content: center;
+gap: 16px;
+margin-top: 8px;
 }
 .swipe-btn {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  background: white;
-  box-shadow: var(--shadow);
-  font-size: 24px;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.15s;
+width: 56px; height: 56px;
+border-radius: 50%;
+background: white;
+box-shadow: var(–shadow);
+font-size: 24px;
+display: flex; align-items: center; justify-content: center;
+transition: all 0.15s;
 }
 .swipe-btn:active { transform: scale(0.9); }
-.swipe-btn.next { background: var(--gold); }
+.swipe-btn.next { background: var(–gold); }
 .swipe-progress {
-  text-align: center;
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 10px;
-  font-weight: 600;
+text-align: center;
+font-size: 13px;
+color: var(–muted);
+margin-top: 10px;
+font-weight: 600;
 }
 .progress-bar {
-  width: 100%;
-  height: 6px;
-  background: #eee;
-  border-radius: 999px;
-  overflow: hidden;
-  margin: 8px 0 16px;
+width: 100%;
+height: 6px;
+background: #eee;
+border-radius: 999px;
+overflow: hidden;
+margin: 8px 0 16px;
 }
 .progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--green), var(--gold));
-  transition: width 0.3s;
-  border-radius: 999px;
+height: 100%;
+background: linear-gradient(90deg, var(–green), var(–gold));
+transition: width 0.3s;
+border-radius: 999px;
 }
 
 /* ===== FULLSCREEN MODE ===== */
 .fullscreen-btn {
-  position: absolute;
-  top: -8px;
-  right: 0;
-  background: white;
-  color: var(--text);
-  border: 2px solid var(--green);
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  z-index: 5;
-  transition: all 0.15s;
-  font-family: inherit;
+position: absolute;
+top: -8px;
+right: 0;
+background: white;
+color: var(–text);
+border: 2px solid var(–green);
+padding: 6px 12px;
+border-radius: 999px;
+font-size: 12px;
+font-weight: 700;
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+z-index: 5;
+transition: all 0.15s;
+font-family: inherit;
 }
-.fullscreen-btn:hover { background: var(--green); color: white; }
+.fullscreen-btn:hover { background: var(–green); color: white; }
 .fullscreen-btn:active { transform: scale(0.95); }
 /* Position the button relative to its deck container */
 #heroes-swipe, #symbols-swipe-container, #animals-swipe, #alphabet-swipe-container {
-  position: relative;
+position: relative;
 }
 
 /* Fullscreen overlay - takes over the whole screen */
 .fullscreen-overlay {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(180deg, var(--cream) 0%, #fff3d6 100%);
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: env(safe-area-inset-top, 20px) 16px env(safe-area-inset-bottom, 20px);
-  animation: fsFadeIn 0.25s ease;
+position: fixed;
+inset: 0;
+background: linear-gradient(180deg, var(–cream) 0%, #fff3d6 100%);
+z-index: 9999;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: env(safe-area-inset-top, 20px) 16px env(safe-area-inset-bottom, 20px);
+animation: fsFadeIn 0.25s ease;
+touch-action: pan-x pan-y;
 }
 @keyframes fsFadeIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
 
 .fullscreen-overlay .fs-card-wrap {
-  width: 100%;
-  max-width: 560px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-/* Scale the card to fill the available space */
-.fullscreen-overlay .swipe-card {
-  position: relative;
-  width: 100%;
-  height: 85vh;
-  max-height: 720px;
-  padding: 32px 24px;
-  font-size: 1.15em;
-}
-.fullscreen-overlay .swipe-card .hero-name,
-.fullscreen-overlay .swipe-card .letter {
-  font-size: 2.4em;
-}
-.fullscreen-overlay .swipe-card .swipe-image {
-  width: 60%;
-  max-width: 280px;
-  height: auto;
-  aspect-ratio: 1;
-}
-.fullscreen-overlay .swipe-card .fact {
-  font-size: 1.05em;
-  max-width: 90%;
+width: 100%;
+max-width: 640px;
+flex: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+margin: 60px 0 80px;
+/* The deck needs room to receive horizontal swipe events */
+touch-action: pan-y;
 }
 
-/* Tap zones on the left and right edges for navigation (since buttons are hidden) */
-.fullscreen-overlay .fs-tap-zone {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 25%;
-  z-index: 10;
-  background: transparent;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  font-size: 36px;
-  opacity: 0;
-  transition: opacity 0.2s;
-  color: var(--green);
-  font-weight: 800;
-  border: none;
-  font-family: inherit;
+/* Scale the deck and cards way up for kids */
+.fullscreen-overlay .swipe-deck {
+width: 100%;
+height: 100%;
+min-height: 500px;
 }
-.fullscreen-overlay .fs-tap-zone:hover,
-.fullscreen-overlay .fs-tap-zone:active { opacity: 0.7; }
-.fullscreen-overlay .fs-tap-zone.left { left: 0; justify-content: flex-start; padding-left: 8px; }
-.fullscreen-overlay .fs-tap-zone.right { right: 0; justify-content: flex-end; padding-right: 8px; }
+.fullscreen-overlay .swipe-card {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+padding: 32px 28px;
+font-size: 1.2em;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+/* BIGGER images for young eyes */
+.fullscreen-overlay .swipe-card .swipe-image {
+width: 85%;
+max-width: 380px;
+aspect-ratio: 1;
+height: auto;
+margin-bottom: 20px;
+}
+.fullscreen-overlay .swipe-card .swipe-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+/* Letter cards — huge letter */
+.fullscreen-overlay .swipe-card .letter {
+font-size: 5em;
+margin-bottom: 12px;
+}
+.fullscreen-overlay .swipe-card .word {
+font-size: 2.2em;
+margin: 12px 0 8px;
+}
+/* Hero / animal / symbol names */
+.fullscreen-overlay .swipe-card .hero-name {
+font-size: 1.8em;
+text-align: center;
+}
+.fullscreen-overlay .swipe-card .title {
+font-size: 0.95em;
+}
+.fullscreen-overlay .swipe-card .fact {
+font-size: 1.05em;
+max-width: 92%;
+margin-top: 10px;
+text-align: center;
+}
+.fullscreen-overlay .swipe-card .hero-subtitle,
+.fullscreen-overlay .swipe-card .animal-subtitle {
+font-size: 0.75em;
+padding: 6px 18px;
+margin-bottom: 14px;
+}
+.fullscreen-overlay .animal-fun-fact {
+font-size: 0.95em;
+margin-top: 14px;
+max-width: 92%;
+}
+
+/* Bottom nav buttons — big, thumb-friendly, don’t block the card */
+.fullscreen-overlay .fs-nav {
+position: fixed;
+bottom: calc(env(safe-area-inset-bottom, 16px) + 18px);
+left: 0;
+right: 0;
+display: flex;
+justify-content: center;
+gap: 24px;
+z-index: 20;
+pointer-events: none;
+}
+.fullscreen-overlay .fs-nav button {
+pointer-events: auto;
+width: 72px;
+height: 72px;
+border-radius: 50%;
+background: white;
+box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+font-size: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 3px solid var(–green);
+cursor: pointer;
+transition: transform 0.15s;
+}
+.fullscreen-overlay .fs-nav button:active { transform: scale(0.9); }
+.fullscreen-overlay .fs-nav .fs-next {
+background: var(–gold);
+border-color: var(–gold-dark);
+}
 
 /* Exit button — top-right */
 .fullscreen-overlay .fs-exit {
-  position: absolute;
-  top: calc(env(safe-area-inset-top, 16px) + 8px);
-  right: 16px;
-  background: white;
-  border: none;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  font-size: 22px;
-  font-weight: 700;
-  box-shadow: var(--shadow);
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--text);
+position: fixed;
+top: calc(env(safe-area-inset-top, 16px) + 14px);
+right: 16px;
+background: white;
+border: none;
+width: 52px;
+height: 52px;
+border-radius: 50%;
+font-size: 24px;
+font-weight: 700;
+box-shadow: var(–shadow);
+z-index: 25;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+color: var(–text);
 }
 .fullscreen-overlay .fs-exit:active { transform: scale(0.9); }
 
+/* Progress indicator at top */
+.fullscreen-overlay .fs-counter {
+position: fixed;
+top: calc(env(safe-area-inset-top, 16px) + 24px);
+left: 50%;
+transform: translateX(-50%);
+background: white;
+padding: 8px 20px;
+border-radius: 999px;
+font-size: 14px;
+font-weight: 700;
+color: var(–text);
+box-shadow: var(–shadow);
+z-index: 20;
+}
+
 /* When in fullscreen, disable scrolling on body */
 body.fullscreen-active {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
+overflow: hidden;
+position: fixed;
+width: 100%;
 }
 
 /* Grid view for alphabet */
 .alphabet-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 12px;
 }
 .letter-card {
-  background: white;
-  border-radius: var(--radius);
-  padding: 12px 8px;
-  text-align: center;
-  box-shadow: var(--shadow);
-  transition: all 0.2s;
-  border: 3px solid transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
+background: white;
+border-radius: var(–radius);
+padding: 12px 8px;
+text-align: center;
+box-shadow: var(–shadow);
+transition: all 0.2s;
+border: 3px solid transparent;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 4px;
 }
-.letter-card:active { transform: scale(0.95); border-color: var(--gold); }
+.letter-card:active { transform: scale(0.95); border-color: var(–gold); }
 .letter-card .mini-letter {
-  font-family: 'Baloo 2', sans-serif;
-  font-weight: 800;
-  font-size: 28px;
-  background: linear-gradient(135deg, var(--green), var(--gold-dark));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+font-family: ‘Baloo 2’, sans-serif;
+font-weight: 800;
+font-size: 28px;
+background: linear-gradient(135deg, var(–green), var(–gold-dark));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
 }
 .letter-card .mini-img {
-  width: 50px; height: 50px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: var(--cream);
-  position: relative;
+width: 50px; height: 50px;
+border-radius: 10px;
+overflow: hidden;
+background: var(–cream);
+position: relative;
 }
 .letter-card .mini-img img { width: 100%; height: 100%; object-fit: cover; }
 .letter-card .mini-img .emoji-fallback {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 28px;
+position: absolute; inset: 0;
+display: flex; align-items: center; justify-content: center;
+font-size: 28px;
 }
 .letter-card .mini-word {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text);
+font-size: 11px;
+font-weight: 600;
+color: var(–text);
 }
 
 /* ===== INTERACTIVE MAP ===== */
 .map-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 14px;
-  justify-content: center;
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-bottom: 14px;
+justify-content: center;
 }
 .legend-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: white;
-  padding: 6px 12px;
-  border-radius: 999px;
-  box-shadow: var(--shadow);
-  font-size: 13px;
-  font-weight: 600;
+display: inline-flex;
+align-items: center;
+gap: 6px;
+background: white;
+padding: 6px 12px;
+border-radius: 999px;
+box-shadow: var(–shadow);
+font-size: 13px;
+font-weight: 600;
 }
 .legend-swatch { width: 14px; height: 14px; border-radius: 50%; }
 
 .map-wrap {
-  background: linear-gradient(180deg, #b8e6f5 0%, #87ceeb 100%);
-  border-radius: var(--radius-lg);
-  padding: 16px 8px;
-  box-shadow: var(--shadow);
-  margin-bottom: 16px;
-  position: relative;
-  overflow: hidden;
+background: linear-gradient(180deg, #b8e6f5 0%, #87ceeb 100%);
+border-radius: var(–radius-lg);
+padding: 16px 8px;
+box-shadow: var(–shadow);
+margin-bottom: 16px;
+position: relative;
+overflow: hidden;
 }
 .map-wrap::before {
-  content: '🌊';
-  position: absolute;
-  bottom: 6px; left: 12px;
-  font-size: 22px;
-  opacity: 0.6;
+content: ‘🌊’;
+position: absolute;
+bottom: 6px; left: 12px;
+font-size: 22px;
+opacity: 0.6;
 }
 .map-wrap::after {
-  content: '⛵';
-  position: absolute;
-  top: 12px; right: 18px;
-  font-size: 22px;
-  opacity: 0.7;
+content: ‘⛵’;
+position: absolute;
+top: 12px; right: 18px;
+font-size: 22px;
+opacity: 0.7;
 }
 .jamaica-map {
-  width: 100%;
-  height: auto;
-  display: block;
+width: 100%;
+height: auto;
+display: block;
 }
 
 /* Map backdrop - the accurate Wikimedia SVG rendered underneath.
-   We override the original pastel colors to coordinate by COUNTY:
-     Cornwall (west) = pink,  Middlesex (middle) = gold,  Surrey (east) = green. */
+We override the original pastel colors to coordinate by COUNTY:
+Cornwall (west) = pink,  Middlesex (middle) = gold,  Surrey (east) = green. */
 .map-backdrop .island-outline {
-  fill: #fffdf5;
-  stroke: #2a6b3f;
-  stroke-width: 2.5;
-  fill-opacity: 1;
+fill: #fffdf5;
+stroke: #2a6b3f;
+stroke-width: 2.5;
+fill-opacity: 1;
 }
 .map-backdrop path, .map-backdrop polygon {
-  stroke: rgba(255,255,255,0.7);
-  stroke-width: 1.2;
-  stroke-linejoin: round;
-  transition: fill 0.2s;
+stroke: rgba(255,255,255,0.7);
+stroke-width: 1.2;
+stroke-linejoin: round;
+transition: fill 0.2s;
 }
 
 /* Cornwall County — west (pink family) */
@@ -859,7 +932,7 @@ body.fullscreen-active {
 .map-backdrop #path91,        /* St. James */
 .map-backdrop #path87,        /* Trelawny */
 .map-backdrop #polygon89 {    /* St. Elizabeth */
-  fill: #ffc4d8;
+fill: #ffc4d8;
 }
 
 /* Middlesex County — central (gold family) */
@@ -868,7 +941,7 @@ body.fullscreen-active {
 .map-backdrop #path79,        /* Clarendon */
 .map-backdrop #path73,        /* St. Catherine */
 .map-backdrop #path63 {       /* St. Mary */
-  fill: #ffe07a;
+fill: #ffe07a;
 }
 
 /* Surrey County — east (green family) */
@@ -876,7 +949,7 @@ body.fullscreen-active {
 .map-backdrop #path57,        /* St. Andrew */
 .map-backdrop #polygon55,     /* Kingston */
 .map-backdrop #path51 {       /* St. Thomas */
-  fill: #a5e69a;
+fill: #a5e69a;
 }
 
 /* Small cays (st3 = cream) - keep them subtle */
@@ -884,357 +957,358 @@ body.fullscreen-active {
 
 /* Parish labels */
 .parish-label {
-  font-family: 'Baloo 2', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  fill: var(--black);
-  pointer-events: none;
+font-family: ‘Baloo 2’, sans-serif;
+font-weight: 700;
+font-size: 18px;
+fill: var(–black);
+pointer-events: none;
 }
 .parish-label-halo {
-  font-family: 'Baloo 2', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  fill: var(--black);
-  pointer-events: none;
-  stroke: white;
-  stroke-width: 5.5;
-  stroke-linejoin: round;
-  paint-order: stroke fill;
-  opacity: 0.98;
+font-family: ‘Baloo 2’, sans-serif;
+font-weight: 700;
+font-size: 18px;
+fill: var(–black);
+pointer-events: none;
+stroke: white;
+stroke-width: 5.5;
+stroke-linejoin: round;
+paint-order: stroke fill;
+opacity: 0.98;
 }
 
 /* Tappable hotspots over each parish - coloured by COUNTY */
 .parish-hotspot {
-  cursor: pointer;
-  transition: transform 0.15s;
-  transform-origin: center;
-  transform-box: fill-box;
+cursor: pointer;
+transition: transform 0.15s;
+transform-origin: center;
+transform-box: fill-box;
 }
 .parish-hotspot:hover {
-  transform: scale(1.1);
+transform: scale(1.1);
 }
 .parish-hotspot:hover .hotspot-circle,
 .parish-hotspot.active .hotspot-circle {
-  opacity: 0.95;
+opacity: 0.95;
 }
 .parish-hotspot.active {
-  transform: scale(1.15);
+transform: scale(1.15);
 }
 .parish-hotspot text {
-  pointer-events: none;
-  user-select: none;
+pointer-events: none;
+user-select: none;
 }
 
 /* Bouncing location pin for selected parish */
 #location-pin {
-  pointer-events: none;
-  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.35));
+pointer-events: none;
+filter: drop-shadow(0 3px 6px rgba(0,0,0,0.35));
 }
 #location-pin .pin-bounce {
-  animation: pinBounce 1.1s cubic-bezier(.5,0,.3,1) infinite;
-  transform-origin: 0 14px;
+animation: pinBounce 1.1s cubic-bezier(.5,0,.3,1) infinite;
+transform-origin: 0 14px;
 }
 @keyframes pinBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-12px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  #location-pin .pin-bounce { animation: none; }
+#location-pin .pin-bounce { animation: none; }
 }
 
 .parish-popup {
-  background: white;
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--shadow);
-  margin-bottom: 14px;
-  border-top: 5px solid var(--pink);
-  display: none;
-  animation: slideUp 0.3s ease;
+background: white;
+border-radius: var(–radius);
+padding: 18px;
+box-shadow: var(–shadow);
+margin-bottom: 14px;
+border-top: 5px solid var(–pink);
+display: none;
+animation: slideUp 0.3s ease;
 }
 .parish-popup.show { display: block; }
 @keyframes slideUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0);} }
 .parish-popup .pop-img {
-  width: 100%;
-  height: 180px;
-  border-radius: 14px;
-  overflow: hidden;
-  background: var(--cream);
-  margin-bottom: 12px;
-  position: relative;
+width: 100%;
+height: 180px;
+border-radius: 14px;
+overflow: hidden;
+background: var(–cream);
+margin-bottom: 12px;
+position: relative;
 }
 .parish-popup .pop-img img { width: 100%; height: 100%; object-fit: cover; }
 .parish-popup .pop-img .emoji-fallback {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 70px;
+position: absolute; inset: 0;
+display: flex; align-items: center; justify-content: center;
+font-size: 70px;
 }
-.parish-popup h3 { font-size: 22px; margin-bottom: 4px; color: var(--text); }
+.parish-popup h3 { font-size: 22px; margin-bottom: 4px; color: var(–text); }
 .parish-popup .pop-county {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
-  color: var(--black);
+display: inline-block;
+padding: 3px 10px;
+border-radius: 999px;
+font-size: 11px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+margin-bottom: 8px;
+color: var(–black);
 }
 .parish-popup .pop-capital {
-  font-size: 14px;
-  color: var(--green);
-  font-weight: 600;
-  margin-bottom: 10px;
+font-size: 14px;
+color: var(–green);
+font-weight: 600;
+margin-bottom: 10px;
 }
 .parish-popup .fun-fact {
-  background: var(--cream);
-  border-left: 4px solid var(--gold);
-  padding: 12px;
-  border-radius: 10px;
-  font-size: 14px;
-  color: var(--text);
-  margin-top: 10px;
+background: var(–cream);
+border-left: 4px solid var(–gold);
+padding: 12px;
+border-radius: 10px;
+font-size: 14px;
+color: var(–text);
+margin-top: 10px;
 }
-.parish-popup .fun-fact strong { color: var(--green-dark); display:block; margin-bottom:4px; font-size:12px; text-transform:uppercase; letter-spacing:0.5px; }
+.parish-popup .fun-fact strong { color: var(–green-dark); display:block; margin-bottom:4px; font-size:12px; text-transform:uppercase; letter-spacing:0.5px; }
 
 /* ===== QUIZ ===== */
 .quiz-tabs {
-  display: flex;
-  gap: 6px;
-  background: white;
-  padding: 6px;
-  border-radius: 14px;
-  margin-bottom: 16px;
-  box-shadow: var(--shadow);
+display: flex;
+gap: 6px;
+background: white;
+padding: 6px;
+border-radius: 14px;
+margin-bottom: 16px;
+box-shadow: var(–shadow);
 }
 .quiz-tab {
-  flex: 1;
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--muted);
-  min-height: 42px;
+flex: 1;
+padding: 10px;
+border-radius: 10px;
+font-size: 14px;
+font-weight: 600;
+color: var(–muted);
+min-height: 42px;
 }
-.quiz-tab.active { background: var(--tab-color, var(--purple)); color: white; }
+.quiz-tab.active { background: var(–tab-color, var(–purple)); color: white; }
 
 .proverb-card-list .item-card .visual { background: #ead6ff; }
-.proverb-card-list .item-card .visual .emoji-fallback { color: var(--purple); }
+.proverb-card-list .item-card .visual .emoji-fallback { color: var(–purple); }
 
 /* Quiz screen */
 .quiz-screen {
-  background: white;
-  border-radius: var(--radius-lg);
-  padding: 24px 20px;
-  box-shadow: var(--shadow-lg);
-  border-top: 6px solid var(--purple);
+background: white;
+border-radius: var(–radius-lg);
+padding: 24px 20px;
+box-shadow: var(–shadow-lg);
+border-top: 6px solid var(–purple);
 }
 .quiz-progress-text {
-  text-align: center;
-  font-size: 14px;
-  color: var(--muted);
-  font-weight: 600;
-  margin-bottom: 6px;
+text-align: center;
+font-size: 14px;
+color: var(–muted);
+font-weight: 600;
+margin-bottom: 6px;
 }
 .quiz-question {
-  font-family: 'Baloo 2', sans-serif;
-  font-weight: 700;
-  font-size: 19px;
-  color: var(--text);
-  text-align: center;
-  margin: 14px 0 20px;
-  line-height: 1.4;
-  font-style: italic;
+font-family: ‘Baloo 2’, sans-serif;
+font-weight: 700;
+font-size: 19px;
+color: var(–text);
+text-align: center;
+margin: 14px 0 20px;
+line-height: 1.4;
+font-style: italic;
 }
 .quiz-options { display: flex; flex-direction: column; gap: 10px; }
 .quiz-option {
-  background: var(--cream);
-  border: 3px solid #eee;
-  border-radius: 14px;
-  padding: 14px 16px;
-  text-align: left;
-  font-size: 15px;
-  color: var(--text);
-  font-family: inherit;
-  font-weight: 500;
-  transition: all 0.2s;
-  min-height: 56px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  line-height: 1.4;
+background: var(–cream);
+border: 3px solid #eee;
+border-radius: 14px;
+padding: 14px 16px;
+text-align: left;
+font-size: 15px;
+color: var(–text);
+font-family: inherit;
+font-weight: 500;
+transition: all 0.2s;
+min-height: 56px;
+display: flex;
+align-items: center;
+gap: 10px;
+line-height: 1.4;
 }
 .quiz-option:not(:disabled):active { transform: scale(0.98); }
 .quiz-option .opt-letter {
-  width: 28px; height: 28px;
-  border-radius: 50%;
-  background: white;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 13px;
-  color: var(--purple);
-  flex-shrink: 0;
+width: 28px; height: 28px;
+border-radius: 50%;
+background: white;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+font-weight: 700;
+font-size: 13px;
+color: var(–purple);
+flex-shrink: 0;
 }
 .quiz-option.correct {
-  background: #d4f0dd;
-  border-color: var(--green);
-  color: var(--green-dark);
+background: #d4f0dd;
+border-color: var(–green);
+color: var(–green-dark);
 }
-.quiz-option.correct .opt-letter { background: var(--green); color: white; }
+.quiz-option.correct .opt-letter { background: var(–green); color: white; }
 .quiz-option.wrong {
-  background: #ffe3dc;
-  border-color: var(--coral);
-  color: #c0392b;
+background: #ffe3dc;
+border-color: var(–coral);
+color: #c0392b;
 }
-.quiz-option.wrong .opt-letter { background: var(--coral); color: white; }
+.quiz-option.wrong .opt-letter { background: var(–coral); color: white; }
 .quiz-option:disabled { cursor: default; }
 
 .quiz-feedback {
-  margin-top: 16px;
-  padding: 14px;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: 600;
-  display: none;
+margin-top: 16px;
+padding: 14px;
+border-radius: 12px;
+text-align: center;
+font-weight: 600;
+display: none;
 }
 .quiz-feedback.show { display: block; animation: popIn 0.3s ease; }
-.quiz-feedback.correct { background: #d4f0dd; color: var(--green-dark); }
+.quiz-feedback.correct { background: #d4f0dd; color: var(–green-dark); }
 .quiz-feedback.wrong { background: #ffe3dc; color: #c0392b; }
 @keyframes popIn { from { opacity:0; transform: scale(0.9);} to { opacity:1; transform: scale(1);} }
 
 .quiz-next-btn {
-  display: block;
-  width: 100%;
-  margin-top: 16px;
-  padding: 14px;
-  background: var(--purple);
-  color: white;
-  border-radius: 14px;
-  font-size: 16px;
-  font-weight: 700;
-  min-height: 50px;
+display: block;
+width: 100%;
+margin-top: 16px;
+padding: 14px;
+background: var(–purple);
+color: white;
+border-radius: 14px;
+font-size: 16px;
+font-weight: 700;
+min-height: 50px;
 }
 .quiz-next-btn:active { transform: scale(0.98); }
 
 .quiz-result {
-  text-align: center;
-  padding: 30px 20px;
+text-align: center;
+padding: 30px 20px;
 }
 .quiz-result .trophy {
-  font-size: 80px;
-  margin-bottom: 14px;
+font-size: 80px;
+margin-bottom: 14px;
 }
-.quiz-result h3 { font-size: 26px; margin-bottom: 8px; color: var(--text); }
-.quiz-result p { color: var(--muted); margin-bottom: 20px; }
+.quiz-result h3 { font-size: 26px; margin-bottom: 8px; color: var(–text); }
+.quiz-result p { color: var(–muted); margin-bottom: 20px; }
 .quiz-result .score {
-  font-family: 'Baloo 2', sans-serif;
-  font-weight: 800;
-  font-size: 50px;
-  background: linear-gradient(135deg, var(--green), var(--gold-dark));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin: 10px 0;
+font-family: ‘Baloo 2’, sans-serif;
+font-weight: 800;
+font-size: 50px;
+background: linear-gradient(135deg, var(–green), var(–gold-dark));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+margin: 10px 0;
 }
 
 /* Match game */
 .match-game {
-  background: white;
-  border-radius: var(--radius-lg);
-  padding: 20px;
-  box-shadow: var(--shadow-lg);
-  border-top: 6px solid var(--purple);
+background: white;
+border-radius: var(–radius-lg);
+padding: 20px;
+box-shadow: var(–shadow-lg);
+border-top: 6px solid var(–purple);
 }
 .match-instructions {
-  font-size: 14px;
-  color: var(--muted);
-  text-align: center;
-  margin-bottom: 16px;
+font-size: 14px;
+color: var(–muted);
+text-align: center;
+margin-bottom: 16px;
 }
 .match-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px;
 }
 .match-col-header {
-  font-family: 'Baloo 2', sans-serif;
-  font-weight: 700;
-  text-align: center;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--purple);
-  padding: 6px;
+font-family: ‘Baloo 2’, sans-serif;
+font-weight: 700;
+text-align: center;
+font-size: 14px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+color: var(–purple);
+padding: 6px;
 }
 .match-item {
-  background: var(--cream);
-  border: 2px solid #eee;
-  border-radius: 12px;
-  padding: 12px 10px;
-  font-size: 13px;
-  font-family: inherit;
-  font-weight: 500;
-  color: var(--text);
-  text-align: left;
-  min-height: 60px;
-  display: flex;
-  align-items: center;
-  line-height: 1.35;
-  transition: all 0.2s;
+background: var(–cream);
+border: 2px solid #eee;
+border-radius: 12px;
+padding: 12px 10px;
+font-size: 13px;
+font-family: inherit;
+font-weight: 500;
+color: var(–text);
+text-align: left;
+min-height: 60px;
+display: flex;
+align-items: center;
+line-height: 1.35;
+transition: all 0.2s;
 }
 .match-item:active { transform: scale(0.97); }
-.match-item.selected { border-color: var(--purple); background: #ead6ff; }
-.match-item.matched { background: #d4f0dd; border-color: var(--green); color: var(--green-dark); pointer-events: none; opacity: 0.7; }
-.match-item.wrong { background: #ffe3dc; border-color: var(--coral); animation: shake 0.3s; }
+.match-item.selected { border-color: var(–purple); background: #ead6ff; }
+.match-item.matched { background: #d4f0dd; border-color: var(–green); color: var(–green-dark); pointer-events: none; opacity: 0.7; }
+.match-item.wrong { background: #ffe3dc; border-color: var(–coral); animation: shake 0.3s; }
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-6px); }
-  75% { transform: translateX(6px); }
+0%, 100% { transform: translateX(0); }
+25% { transform: translateX(-6px); }
+75% { transform: translateX(6px); }
 }
 
 /* Anthem */
 .anthem-card {
-  background: linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%);
-  color: white;
-  border-radius: var(--radius-lg);
-  padding: 24px 20px;
-  box-shadow: var(--shadow-lg);
-  border: 3px solid var(--gold);
+background: linear-gradient(135deg, var(–black) 0%, #2a2a2a 100%);
+color: white;
+border-radius: var(–radius-lg);
+padding: 24px 20px;
+box-shadow: var(–shadow-lg);
+border: 3px solid var(–gold);
 }
-.anthem-card h3 { color: var(--gold); font-size: 22px; margin-bottom: 6px; text-align: center; }
-.anthem-card .label { text-align: center; color: var(--green); font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; margin-bottom: 16px; }
-.anthem-card .verse { font-size: 16.5px; line-height: 1.8; margin-bottom: 16px; padding: 14px; background: rgba(255,255,255,0.06); border-radius: 12px; border-left: 3px solid var(--gold); }
+.anthem-card h3 { color: var(–gold); font-size: 22px; margin-bottom: 6px; text-align: center; }
+.anthem-card .label { text-align: center; color: var(–green); font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; margin-bottom: 16px; }
+.anthem-card .verse { font-size: 16.5px; line-height: 1.8; margin-bottom: 16px; padding: 14px; background: rgba(255,255,255,0.06); border-radius: 12px; border-left: 3px solid var(–gold); }
 .anthem-card .verse:last-child { margin-bottom: 0; }
 
 .empty {
-  text-align: center;
-  padding: 40px 20px;
-  color: var(--muted);
+text-align: center;
+padding: 40px 20px;
+color: var(–muted);
 }
 .empty .big { font-size: 50px; margin-bottom: 10px; }
 
 /* ===== RESPONSIVE ===== */
 @media (min-width: 600px) {
-  body { font-size: 18px; }
-  .section-grid { grid-template-columns: repeat(3, 1fr); }
-  .section-card.anthem { grid-column: span 3; }
-  .alphabet-grid { grid-template-columns: repeat(4, 1fr); }
-  .hero h1 { font-size: 34px; }
-  .swipe-deck { height: 520px; }
-  .swipe-card .swipe-image { width: 220px; height: 220px; }
+body { font-size: 18px; }
+.section-grid { grid-template-columns: repeat(3, 1fr); }
+.section-card.anthem { grid-column: span 3; }
+.alphabet-grid { grid-template-columns: repeat(4, 1fr); }
+.hero h1 { font-size: 34px; }
+.swipe-deck { height: 520px; }
+.swipe-card .swipe-image { width: 220px; height: 220px; }
 }
 
 button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .parish-region:focus-visible, .parish-pin:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 2px;
+outline: 3px solid var(–gold);
+outline-offset: 2px;
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+*, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 </style>
+
 </head>
 <body>
 
@@ -1250,6 +1324,7 @@ button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .
 <main id="main">
 
   <!-- ===== HOME ===== -->
+
   <section class="screen active" id="screen-home">
     <div class="hero">
       <h1>Welcome, Likkle One!</h1>
@@ -1257,30 +1332,34 @@ button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .
       <div class="flag-strip"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
     </div>
 
-    <div class="age-selector">
-      <h2>Pick your age group</h2>
-      <div class="age-chips">
-        <button class="age-chip active" data-age="all">All Ages</button>
-        <button class="age-chip" data-age="toddler">Toddler (2-4)</button>
-        <button class="age-chip" data-age="early">Early (5-7)</button>
-        <button class="age-chip" data-age="middle">Middle (8-10)</button>
-        <button class="age-chip" data-age="older">Older (11+)</button>
-      </div>
-    </div>
+```
+<div class="age-selector">
+  <h2>Pick your age group</h2>
+  <div class="age-chips">
+    <button class="age-chip active" data-age="all">All Ages</button>
+    <button class="age-chip" data-age="toddler">Toddler (2-4)</button>
+    <button class="age-chip" data-age="early">Early (5-7)</button>
+    <button class="age-chip" data-age="middle">Middle (8-10)</button>
+    <button class="age-chip" data-age="older">Older (11+)</button>
+  </div>
+</div>
 
-    <div class="section-grid">
-      <button class="section-card heroes" data-screen="heroes" data-ages="early,middle,older"><div class="icon">👑</div><h3>National Heroes</h3><p>Meet the great men and women</p></button>
-      <button class="section-card symbols" data-screen="symbols" data-ages="toddler,early,middle,older"><div class="icon">🌳</div><h3>National Symbols</h3><p>Dish, fruit, tree, bird</p></button>
-      <button class="section-card animals" data-screen="animals" data-ages="toddler,early,middle,older"><div class="icon">🦎</div><h3>Native Animals</h3><p>Our endemic creatures</p></button>
-      <button class="section-card alphabet" data-screen="alphabet" data-ages="toddler,early"><div class="icon">🔤</div><h3>Jamaican ABC</h3><p>A is for Ackee...</p></button>
-      <button class="section-card sayings" data-screen="sayings" data-ages="middle,older"><div class="icon">💬</div><h3>Proverbs & Quiz</h3><p>Wise words + games</p></button>
-      <button class="section-card dictionary" data-screen="dictionary" data-ages="toddler,early,middle,older"><div class="icon">📖</div><h3>Patois Dictionary</h3><p>Wah gwaan? Search words</p></button>
-      <button class="section-card parishes" data-screen="parishes" data-ages="middle,older"><div class="icon">🗺️</div><h3>14 Parishes Map</h3><p>Tap to explore</p></button>
-      <button class="section-card anthem" data-screen="anthem" data-ages="early,middle,older"><div class="icon">🎵</div><h3>Anthem & Pledge</h3><p>Eternal Father Bless Our Land</p></button>
-    </div>
+<div class="section-grid">
+  <button class="section-card heroes" data-screen="heroes" data-ages="early,middle,older"><div class="icon">👑</div><h3>National Heroes</h3><p>Meet the great men and women</p></button>
+  <button class="section-card symbols" data-screen="symbols" data-ages="toddler,early,middle,older"><div class="icon">🌳</div><h3>National Symbols</h3><p>Dish, fruit, tree, bird</p></button>
+  <button class="section-card animals" data-screen="animals" data-ages="toddler,early,middle,older"><div class="icon">🦎</div><h3>Native Animals</h3><p>Our endemic creatures</p></button>
+  <button class="section-card alphabet" data-screen="alphabet" data-ages="toddler,early"><div class="icon">🔤</div><h3>Jamaican ABC</h3><p>A is for Ackee...</p></button>
+  <button class="section-card sayings" data-screen="sayings" data-ages="middle,older"><div class="icon">💬</div><h3>Proverbs & Quiz</h3><p>Wise words + games</p></button>
+  <button class="section-card dictionary" data-screen="dictionary" data-ages="toddler,early,middle,older"><div class="icon">📖</div><h3>Patois Dictionary</h3><p>Wah gwaan? Search words</p></button>
+  <button class="section-card parishes" data-screen="parishes" data-ages="middle,older"><div class="icon">🗺️</div><h3>14 Parishes Map</h3><p>Tap to explore</p></button>
+  <button class="section-card anthem" data-screen="anthem" data-ages="early,middle,older"><div class="icon">🎵</div><h3>Anthem & Pledge</h3><p>Eternal Father Bless Our Land</p></button>
+</div>
+```
+
   </section>
 
   <!-- ===== HEROES ===== -->
+
   <section class="screen" id="screen-heroes">
     <div class="section-header" style="border-left-color:var(--coral)"><h2>👑 National Heroes</h2><p>Jamaica's seven National Heroes — swipe, read, or test yourself!</p></div>
     <div class="quiz-tabs" id="heroes-tabs">
@@ -1289,26 +1368,30 @@ button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .
       <button class="quiz-tab" data-mode="quiz" style="--tab-color:var(--coral)">🎯 Quiz</button>
     </div>
 
-    <div id="heroes-swipe">
-      <button class="fullscreen-btn" data-deck="heroes" aria-label="Full-screen mode">⛶ Full Screen</button>
-      <div class="progress-bar"><div class="progress-fill" id="heroes-progress" style="width: 0%"></div></div>
-      <div class="swipe-deck" id="heroes-deck"></div>
-      <div class="swipe-progress" id="heroes-counter"></div>
-      <div class="swipe-hint">👈 Swipe or tap the buttons 👉</div>
-      <div class="swipe-buttons">
-        <button class="swipe-btn" id="hero-prev-btn" aria-label="Previous">⬅️</button>
-        <button class="swipe-btn next" id="hero-next-btn" aria-label="Next">➡️</button>
-      </div>
-    </div>
+```
+<div id="heroes-swipe">
+  <button class="fullscreen-btn" data-deck="heroes" aria-label="Full-screen mode">⛶ Full Screen</button>
+  <div class="progress-bar"><div class="progress-fill" id="heroes-progress" style="width: 0%"></div></div>
+  <div class="swipe-deck" id="heroes-deck"></div>
+  <div class="swipe-progress" id="heroes-counter"></div>
+  <div class="swipe-hint">👈 Swipe or tap the buttons 👉</div>
+  <div class="swipe-buttons">
+    <button class="swipe-btn" id="hero-prev-btn" aria-label="Previous">⬅️</button>
+    <button class="swipe-btn next" id="hero-next-btn" aria-label="Next">➡️</button>
+  </div>
+</div>
 
-    <div id="heroes-list-view" style="display:none">
-      <div class="card-list" id="heroes-list"></div>
-    </div>
+<div id="heroes-list-view" style="display:none">
+  <div class="card-list" id="heroes-list"></div>
+</div>
 
-    <div id="heroes-quiz" style="display:none"></div>
+<div id="heroes-quiz" style="display:none"></div>
+```
+
   </section>
 
   <!-- ===== SYMBOLS ===== -->
+
   <section class="screen" id="screen-symbols">
     <div class="section-header"><h2>🌳 National Symbols</h2><p>Swipe through the symbols of our island.</p></div>
     <div class="alphabet-controls">
@@ -1334,6 +1417,7 @@ button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .
   </section>
 
   <!-- ===== ANIMALS ===== -->
+
   <section class="screen" id="screen-animals">
     <div class="section-header" style="border-left-color:var(--teal)"><h2>🦎 Native Animals</h2><p>Amazing creatures found only in Jamaica — swipe, read, or play!</p></div>
     <div class="quiz-tabs" id="animals-tabs">
@@ -1343,29 +1427,33 @@ button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .
       <button class="quiz-tab" data-mode="match" style="--tab-color:var(--teal)">🔗 Match</button>
     </div>
 
-    <div id="animals-swipe">
-      <button class="fullscreen-btn" data-deck="animals" aria-label="Full-screen mode">⛶ Full Screen</button>
-      <div class="progress-bar"><div class="progress-fill" id="animals-progress" style="width: 0%"></div></div>
-      <div class="swipe-deck" id="animals-deck"></div>
-      <div class="swipe-progress" id="animals-counter"></div>
-      <div class="swipe-hint">👈 Swipe or tap the buttons 👉</div>
-      <div class="swipe-buttons">
-        <button class="swipe-btn" id="animal-prev-btn" aria-label="Previous">⬅️</button>
-        <button class="swipe-btn next" id="animal-next-btn" aria-label="Next" style="background:var(--teal);color:white">➡️</button>
-      </div>
-    </div>
-    <div id="animals-list-view" style="display:none">
-      <div class="card-list" id="animals-list"></div>
-    </div>
-    <div id="animals-quiz" style="display:none"></div>
-    <div id="animals-match" style="display:none"></div>
+```
+<div id="animals-swipe">
+  <button class="fullscreen-btn" data-deck="animals" aria-label="Full-screen mode">⛶ Full Screen</button>
+  <div class="progress-bar"><div class="progress-fill" id="animals-progress" style="width: 0%"></div></div>
+  <div class="swipe-deck" id="animals-deck"></div>
+  <div class="swipe-progress" id="animals-counter"></div>
+  <div class="swipe-hint">👈 Swipe or tap the buttons 👉</div>
+  <div class="swipe-buttons">
+    <button class="swipe-btn" id="animal-prev-btn" aria-label="Previous">⬅️</button>
+    <button class="swipe-btn next" id="animal-next-btn" aria-label="Next" style="background:var(--teal);color:white">➡️</button>
+  </div>
+</div>
+<div id="animals-list-view" style="display:none">
+  <div class="card-list" id="animals-list"></div>
+</div>
+<div id="animals-quiz" style="display:none"></div>
+<div id="animals-match" style="display:none"></div>
 
-    <div class="attribution-note">
-      Animal info &amp; many photos courtesy of <a href="https://animalia.bio/endemic-lists/country/endemic-animals-of-jamaica" target="_blank" rel="noopener">animalia.bio</a>.
-    </div>
+<div class="attribution-note">
+  Animal info &amp; many photos courtesy of <a href="https://animalia.bio/endemic-lists/country/endemic-animals-of-jamaica" target="_blank" rel="noopener">animalia.bio</a>.
+</div>
+```
+
   </section>
 
   <!-- ===== ALPHABET ===== -->
+
   <section class="screen" id="screen-alphabet">
     <div class="section-header" style="border-left-color:var(--gold-dark)"><h2>🔤 Jamaican Alphabet</h2><p>Swipe, scroll, or play the matching game.</p></div>
     <div class="alphabet-controls">
@@ -1393,6 +1481,7 @@ button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .
   </section>
 
   <!-- ===== SAYINGS + QUIZ ===== -->
+
   <section class="screen" id="screen-sayings">
     <div class="section-header" style="border-left-color:var(--purple)"><h2>💬 Proverbs & Sayings</h2><p>Old-time wisdom — learn, then play!</p></div>
     <div class="quiz-tabs">
@@ -1408,6 +1497,7 @@ button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .
   </section>
 
   <!-- ===== DICTIONARY ===== -->
+
   <section class="screen" id="screen-dictionary">
     <div class="section-header" style="border-left-color:var(--sky)"><h2>📖 Patois Dictionary</h2><p>Search or scroll. Sorted A–Z.</p></div>
     <div class="search-wrap" id="search-wrap">
@@ -1420,6 +1510,7 @@ button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .
   </section>
 
   <!-- ===== PARISHES ===== -->
+
   <section class="screen" id="screen-parishes">
     <div class="section-header" style="border-left-color:var(--pink)"><h2>🗺️ The 14 Parishes</h2><p>Tap a parish or an emoji to explore!</p></div>
     <div class="map-legend">
@@ -1436,6 +1527,7 @@ button:focus-visible, .section-card:focus-visible, .letter-card:focus-visible, .
   </section>
 
   <!-- ===== ANTHEM ===== -->
+
   <section class="screen" id="screen-anthem">
     <div class="section-header"><h2>🎵 National Anthem & Pledge</h2><p>Words every Jamaican should know.</p></div>
     <div id="anthem-container"></div>
@@ -3133,13 +3225,14 @@ function renderAll() {
    FULLSCREEN MODE — big, distraction-free card view for kids
    ========================================================= */
 const FS_DECK_CONFIG = {
-  heroes:   { deckId: 'heroes-deck',   getDeck: () => heroesDeck,    render: renderHeroes },
-  symbols:  { deckId: 'symbols-deck',  getDeck: () => symbolsDeck,   render: renderSymbolsSwipe },
-  animals:  { deckId: 'animals-deck',  getDeck: () => animalsDeck,   render: renderAnimalsSwipe },
-  alphabet: { deckId: 'swipe-deck',    getDeck: () => alphabetDeck,  render: renderAlphabetSwipe }
+  heroes:   { deckId: 'heroes-deck',   counterId: 'heroes-counter',  getDeck: () => heroesDeck,    render: renderHeroes },
+  symbols:  { deckId: 'symbols-deck',  counterId: 'symbols-counter', getDeck: () => symbolsDeck,   render: renderSymbolsSwipe },
+  animals:  { deckId: 'animals-deck',  counterId: 'animals-counter', getDeck: () => animalsDeck,   render: renderAnimalsSwipe },
+  alphabet: { deckId: 'swipe-deck',    counterId: 'swipe-counter',   getDeck: () => alphabetDeck,  render: renderAlphabetSwipe }
 };
 
 let fsActive = null;
+let fsCounterInterval = null;
 
 function enterFullscreen(deckKey) {
   if (fsActive) return;
@@ -3153,7 +3246,7 @@ function enterFullscreen(deckKey) {
   // Remember where the deck lives so we can put it back later
   const parent = deckEl.parentElement;
   const nextSibling = deckEl.nextSibling;
-  fsActive = { deckKey, deckEl, parent, nextSibling };
+  fsActive = { deckKey, deckEl, parent, nextSibling, deckApi };
 
   // Build the overlay
   const overlay = document.createElement('div');
@@ -3161,9 +3254,12 @@ function enterFullscreen(deckKey) {
   overlay.id = 'fullscreen-overlay';
   overlay.innerHTML = `
     <button class="fs-exit" id="fs-exit-btn" aria-label="Exit full screen">✕</button>
-    <button class="fs-tap-zone left" id="fs-tap-left" aria-label="Previous card"></button>
-    <button class="fs-tap-zone right" id="fs-tap-right" aria-label="Next card"></button>
+    <div class="fs-counter" id="fs-counter">Card 1</div>
     <div class="fs-card-wrap" id="fs-card-wrap"></div>
+    <div class="fs-nav">
+      <button class="fs-prev" id="fs-prev-btn" aria-label="Previous card">⬅️</button>
+      <button class="fs-next" id="fs-next-btn" aria-label="Next card">➡️</button>
+    </div>
   `;
   document.body.appendChild(overlay);
   document.body.classList.add('fullscreen-active');
@@ -3171,10 +3267,25 @@ function enterFullscreen(deckKey) {
   // Move the deck element INTO the overlay
   document.getElementById('fs-card-wrap').appendChild(deckEl);
 
+  // CRUCIAL: re-render the deck so swipe handlers reattach to the newly-positioned
+  // card DOM. Without this, the cards would be stagnant because the mousedown/touchstart
+  // listeners were bound to elements that no longer exist.
+  deckApi.render();
+  updateFsCounter();
+
   // Wire up controls
   document.getElementById('fs-exit-btn').addEventListener('click', exitFullscreen);
-  document.getElementById('fs-tap-left').addEventListener('click', () => deckApi.advance('left'));
-  document.getElementById('fs-tap-right').addEventListener('click', () => deckApi.advance('right'));
+  document.getElementById('fs-prev-btn').addEventListener('click', () => {
+    deckApi.advance('left');
+    setTimeout(updateFsCounter, 320);
+  });
+  document.getElementById('fs-next-btn').addEventListener('click', () => {
+    deckApi.advance('right');
+    setTimeout(updateFsCounter, 320);
+  });
+
+  // Poll the counter so it stays accurate after swipes too
+  fsCounterInterval = setInterval(updateFsCounter, 400);
 
   // ESC key exits
   document.addEventListener('keydown', fsEscHandler);
@@ -3182,6 +3293,26 @@ function enterFullscreen(deckKey) {
   // Try the real Fullscreen API where supported (Android Chrome, desktop)
   if (overlay.requestFullscreen) {
     overlay.requestFullscreen().catch(() => { /* iOS Safari: ignore, overlay CSS is enough */ });
+  }
+}
+
+function updateFsCounter() {
+  if (!fsActive) return;
+  const counter = document.getElementById('fs-counter');
+  if (!counter) return;
+  const { deckApi } = fsActive;
+  // Read the current state from the deck API
+  if (deckApi && deckApi.state) {
+    const idx = deckApi.state.idx;
+    // Try to work out the total; fall back to reading the original counter's text
+    const cfg = FS_DECK_CONFIG[fsActive.deckKey];
+    const origCounter = document.getElementById(cfg.counterId);
+    let totalText = '';
+    if (origCounter && origCounter.textContent) {
+      const m = origCounter.textContent.match(/of\s+(\d+)/i);
+      if (m) totalText = ` of ${m[1]}`;
+    }
+    counter.textContent = `Card ${idx + 1}${totalText}`;
   }
 }
 
@@ -3196,11 +3327,15 @@ function exitFullscreen() {
     parent.appendChild(deckEl);
   }
 
+  // Re-render back in its original location so swipe handlers work there too
+  if (fsActive.deckApi) fsActive.deckApi.render();
+
   // Remove overlay
   const overlay = document.getElementById('fullscreen-overlay');
   if (overlay) overlay.remove();
   document.body.classList.remove('fullscreen-active');
   document.removeEventListener('keydown', fsEscHandler);
+  if (fsCounterInterval) { clearInterval(fsCounterInterval); fsCounterInterval = null; }
 
   // Exit browser fullscreen if active
   if (document.fullscreenElement && document.exitFullscreen) {
@@ -3249,5 +3384,6 @@ document.querySelectorAll('.section-card[data-screen]').forEach(card => {
 filterHomeCards();
 renderAll();
 </script>
+
 </body>
 </html>
